@@ -1,0 +1,44 @@
+http协议：在网络上传输HTML的协议，用于浏览器和服务器的通信
+浏览器-->服务器发送的请求格式如下：request
+【Receive from 192.168.244.1 : 52599】：GET /xxxx.html HTTP/1.1
+#tcp收到的数据（都是字符串）
+Host: 192.168.244.1:8080（服务器）
+Connection: keep-alive（请求的方式）
+Upgrade-Insecure-Requests: 1
+#浏览器的版本
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36
+#浏览器可以接收哪种格式的数据
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+
+Accept-Encoding: gzip, deflate
+
+Accept-Language: zh-CN,zh;q=0.9
+
+
+
+服务器-->浏览器回送的数据格式如下： response
+包括header（都是连续的）和body
+HTTP/1.1 200 OK
+Bdpagetype: 2
+Bdqid: 0xf8c84c9e00001fec
+Cache-Control: private
+Connection: keep-alive
+Content-Encoding: gzip
+Content-Type: text/html;charset=utf-8
+Date: Mon, 27 Apr 2020 13:17:49 GMT
+Expires: Mon, 27 Apr 2020 13:17:48 GMT
+Server: BWS/1.1
+Set-Cookie: BDSVRTM=480; path=/
+Set-Cookie: BD_HOME=1; path=/
+Set-Cookie: H_PS_PSSID=1438_31325_21079_31253_31341_30907_31270_30824_31164_31473_31195; path=/; domain=.baidu.com
+Strict-Transport-Security: max-age=172800
+Traceid: 1587993469022147533817926662558236811244
+X-Ua-Compatible: IE=Edge,chrome=1
+Transfer-Encoding: chunked
+
+<h2></h2>
+
+http:一种协议，用来浏览器和服务器之间传输的一种约定，
+请求的时候 GET /HTTP 1.1
+服务器回应的时候 HEADER和BODY
+发送的都是基于tcp发送的字符串，都是二进制数据
